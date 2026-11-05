@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David González Peláez | Executive Profile</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --columbia-blue: #75C5F0;
+            --columbia-blue-light: #EBF7FF;
+            --columbia-blue-mid: #9BDDFF;
+            --grayish-blue-dark: #1B2A4A;
+            --grayish-blue-medium: #2D3E50;
+            --grayish-blue-slate: #4A5D6E;
+            --grayish-blue-light: #F0F4F8;
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+            --text-main: #1B2A4A;
+            --text-muted: #5B6B7C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--grayish-blue-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(27, 42, 74, 0.96);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 2px solid var(--columbia-blue);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .nav-logo {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #D1E5F4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--columbia-blue);
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            background: linear-gradient(135deg, var(--grayish-blue-dark) 0%, var(--grayish-blue-medium) 100%);
+            color: #FFFFFF;
+            padding: 4.5rem 1.5rem 3.5rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: var(--columbia-blue);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--columbia-blue);
+            color: var(--grayish-blue-dark);
+            padding: 0.6rem 1.3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--columbia-blue-mid);
+        }
+
+        /* Main Content Layout */
+        main {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--grayish-blue-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--columbia-blue);
+            display: inline-block;
+        }
+
+        .section {
+            margin-bottom: 3.5rem;
+        }
+
+        /* Professional Experience Tiles */
+        .experience-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 1.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(27, 42, 74, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--grayish-blue-dark);
+        }
+
+        .role-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--grayish-blue-slate);
+            margin-top: 0.2rem;
+        }
+
+        .date-badge {
+            background-color: var(--columbia-blue-light);
+            color: var(--grayish-blue-medium);
+            border: 1px solid var(--columbia-blue-mid);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.825rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .bullet-list {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            color: var(--grayish-blue-medium);
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .bullet-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Two-column layout for Education & Languages */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Simplification for mobile view */
+            }
+        }
+
+        .edu-card, .lang-card, .activity-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--grayish-blue-dark);
+        }
+
+        .item-sub {
+            color: var(--grayish-blue-slate);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-detail {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Activities List */
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .activity-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--grayish-blue-dark);
+            color: #A0AEC0;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.875rem;
+            border-top: 1px solid var(--grayish-blue-slate);
+        }
+
+        footer a {
+            color: var(--columbia-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Streamlined Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">David González Peláez</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#activities">Activities</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Header / Intro -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>David González Peláez</h1>
+            <p class="subtitle">Chief Executive Officer | Corporate Finance & Business Transformation</p>
+            <div class="hero-links">
+                <a href="https://www.linkedin.com/in/david-gonzalez-pelaez-2903a83/" target="_blank" rel="noopener" class="hero-btn">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Professional Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-grid">
+
+                <!-- Nuplen -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Nuplen – Animal Nutrition and Industrial Cleaning</div>
+                            <div class="role-title">CEO</div>
+                        </div>
+                        <span class="date-badge">Mar 2022 – Present</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Promoted a culture based on continuous improvement, talent development, and results orientation.</li>
+                        <li>2x EBITDA through restructuring portfolio profitability, redesigning the market risk hedging strategy, and implementing automation and productivity initiatives.</li>
+                        <li>2x storage capacity through warehouse redesign.</li>
+                        <li>Implementation of the S&OP process to achieve a service level of 99.5%.</li>
+                        <li>10% growth in Industrial Cleaning sales.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Finance Director -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA – Fast Moving Consumer Goods</div>
+                            <div class="role-title">Finance Director, Lala Mexico</div>
+                        </div>
+                        <span class="date-badge">May 2020 – Feb 2022</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Improved the IBP process to speed up decision-making in a high inflation scenario.</li>
+                        <li>Implemented the Continuous Improvement Office to strengthen controls and performance.</li>
+                        <li>Accelerated the organizational development plan.</li>
+                        <li>Defined the Sustainability Model for the company.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - IR and Operations Finance Director -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Investor Relations and Operations Finance Director</div>
+                        </div>
+                        <span class="date-badge">Sep 2020 – May 2020</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Small Cap Best IR Professional 2021 Recognition by Institutional Investor.</li>
+                        <li>Launched ESG committee with support from the Board.</li>
+                        <li>Redesigned team structure and priorities to increase impact on operations.</li>
+                        <li>Launched Controlling Best Practices Program for supply chain finance team (supporting 16 production facilities, 1,000 distribution routes, and procurement of raw materials) to reduce losses, control expenses, improve cost, and reduce inventory days.</li>
+                        <li>Member of the Board's Finance and Sustainability Committee.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Treasury, IR, Risk Director -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Treasury, Investor Relations, and Risk Management Director</div>
+                        </div>
+                        <span class="date-badge">Sep 2018 – Aug 2020</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Consolidated a global treasury: cash management, financing, hedging, and operational processes.</li>
+                        <li>Repositioned LALA in the investor community through a consistent and transparent communication strategy, reflected in a 67% increase in the stock price.</li>
+                        <li>Carried out a best-in-class Investor Day – recognized by the investor community.</li>
+                        <li>Refinanced MXN $11.6 Bn in debt capital markets, reducing cost and improving maturity profile.</li>
+                        <li>Redesigned financing strategy by strengthening liquidity and avoiding refinancing risks.</li>
+                        <li>Implemented a total cost risk management program for the company.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Commercial Finance Business Partner -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Commercial Finance Business Partner</div>
+                        </div>
+                        <span class="date-badge">Nov 2016 – Aug 2018</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Controller (MXN $13 Bn) of Trade Investment, SG&A, Marketing, and Accounts Receivable.</li>
+                        <li>Head of financial team supporting the operation of 150 distribution centers.</li>
+                        <li>Accountable for internal controls, processes, productivity, and service to 6,300 sales routes.</li>
+                        <li>Custodian of product, channel, customer, and sales force profitability.</li>
+                        <li>Established controls and productivity processes generating benefits of MXN $380 M.</li>
+                        <li>Restructured the Commercial Finance team, reducing headcount by 10%.</li>
+                        <li>Led an in-house developed "Finance Training Program" reaching 1,600 trainees.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Financial & Strategic Planning Manager -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Financial and Strategic Planning Corporate Manager</div>
+                        </div>
+                        <span class="date-badge">Feb 2014 – Nov 2016</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Responsible for consolidating Strategic & Financial Plans of Mexico, US, and CAM.</li>
+                        <li>M&A: Business valuation, financial due diligence, and presentation of conclusions and recommendations to the Board.</li>
+                        <li>M&A: Participated in negotiation, structuring, and closing of six M&A deals in Mexico, Central America, and the US; increasing sales by USD $350 M.</li>
+                        <li>Defined reporting, consolidation, planning, and investing policies for new business units.</li>
+                        <li>Participated in the implementation of the cross-functional IBP/S&OP process.</li>
+                        <li>Launched Business Partner initiative to align finance with operations teams.</li>
+                        <li>Promoted a financial culture in the Group, aligning strategy to objectives and compensation.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Financial Planning Senior Manager -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Financial Planning Senior Manager</div>
+                        </div>
+                        <span class="date-badge">Mar 2013 – Feb 2014</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>IPO (USD $1 Bn): Responsible for company valuation to set stock debut price and financial section of Offering Memorandum; participated in investment thesis definition for road show.</li>
+                        <li>Supported IR team presenting investment pitch to investors and analysts.</li>
+                        <li>Implemented processes and policies for assessment of CAPEX and commercial initiatives.</li>
+                        <li>Enhanced decision-making processes by improving information access with business intelligence tools.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo LALA - Strategic Planning Manager -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo LALA</div>
+                            <div class="role-title">Strategic Planning Manager</div>
+                        </div>
+                        <span class="date-badge">Jun 2011 – Mar 2013</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Product profitability: Implemented Stage Gate process for new product launches with R&D.</li>
+                        <li>New market opportunities: Business case for entering unpackaged and analog cheese markets.</li>
+                        <li>Strategic Plan: Participated in pitch to the Board to initiate company transformation to go public and reactivate inorganic growth strategy.</li>
+                    </ul>
+                </article>
+
+                <!-- Grupo Empresarial El Arca -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Grupo Empresarial El Arca (American Bookstore)</div>
+                            <div class="role-title">Administration and Finance Director</div>
+                        </div>
+                        <span class="date-badge">Apr 2008 – Jun 2011</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Participated in design of new service products for 8 business units.</li>
+                        <li>Improved EBITDA margin by 200 basis points through financial planning, analysis, and control processes.</li>
+                        <li>Reviewed financial plans of divisions in Brazil, Chile, Spain, Argentina, and Colombia.</li>
+                        <li>Restructured capital structure and negotiated credit terms with suppliers to decrease financing costs.</li>
+                        <li>Restructured short and long-term debt to finance expansion projects.</li>
+                        <li>Centralized procurement to reduce inventory levels and improve supplier negotiations.</li>
+                        <li>Implemented continuous improvement program in logistics department to improve information system reliability and reduce inventory losses by 75%.</li>
+                    </ul>
+                </article>
+
+                <!-- Virtualmex -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Virtualmex – IT Consulting</div>
+                            <div class="role-title">General Manager and IT Consultant (Own Business)</div>
+                        </div>
+                        <span class="date-badge">Sep 2005 – May 2007</span>
+                    </div>
+                </article>
+
+                <!-- CONAGO -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Secretaría Técnica de la CONAGO (National Governors Association)</div>
+                            <div class="role-title">IT & Logistics Manager and Committee Secretary</div>
+                        </div>
+                        <span class="date-badge">Aug 2003 – Aug 2005</span>
+                    </div>
+                </article>
+
+                <!-- Yuma Productions -->
+                <article class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="company-name">Yuma Productions – Multimedia Services</div>
+                            <div class="role-title">Finance and Multimedia Developer (Own Business)</div>
+                        </div>
+                        <span class="date-badge">Sep 2000 – Aug 2003</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Education & Languages Grid -->
+        <div class="two-col-grid section">
+            
+            <!-- Education Section -->
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    
+                    <div class="edu-card">
+                        <div class="item-title">Reputation and Corporate Communication</div>
+                        <div class="item-sub">Anáhuac University, Mexico</div>
+                        <div class="item-detail">Mar – Jul 2019</div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="item-title">International MBA</div>
+                        <div class="item-sub">IE Business School (Instituto de Empresa) – Madrid, Spain</div>
+                        <div class="item-detail">Nov 2006 – Dec 2007</div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="item-title">Engineer in Information Technologies and Telecommunications</div>
+                        <div class="item-sub">Anáhuac University, Mexico</div>
+                        <div class="item-detail">Aug 1999 – May 2003</div>
+                        <div class="item-detail" style="margin-top: 0.5rem; color: var(--grayish-blue-medium);">
+                            • Graduated with High Honors / Scholarship for Academic Excellence<br>
+                            • Vértice Anáhuac – Member of Academic Excellence Program
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages">
+                <h2 class="section-title">Languages</h2>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    
+                    <div class="lang-card">
+                        <div class="item-title">English</div>
+                        <div class="item-sub">Bilingual</div>
+                        <div class="item-detail">First Certificate in English</div>
+                    </div>
+
+                    <div class="lang-card">
+                        <div class="item-title">French</div>
+                        <div class="item-sub">Intermediate</div>
+                        <div class="item-detail">DALF (Diplôme Approfondi de Langue Française)</div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Lectures and Other Activities Section -->
+        <section id="activities" class="section">
+            <h2 class="section-title">Lectures & Other Activities</h2>
+            <div class="activity-card">
+                <div class="activity-list">
+                    
+                    <div class="activity-item">
+                        <div>
+                            <div class="item-title">Board Member</div>
+                            <div class="item-sub">Cámara Nacional de la Transformación (Canacintra) Gómez Palacio</div>
+                        </div>
+                        <span class="date-badge">Mar 2022 – Present</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <div class="item-title">Corporate Reputation and Communication</div>
+                            <div class="item-sub">Anáhuac University</div>
+                        </div>
+                        <span class="date-badge">Mar – Jun 2019</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <div class="item-title">Morgan Stanley Investment Banking Training</div>
+                            <div class="item-sub">New York, USA</div>
+                        </div>
+                        <span class="date-badge">Oct 2014</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <div class="item-title">Confraternidad Carcelaria de México</div>
+                            <div class="item-sub">Missions at Santa Marta Acatitla Prison</div>
+                        </div>
+                        <span class="date-badge">Mar 2008 – Oct 2010</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <div class="item-title">CUFOSO – Social Training Program for Entrepreneurs & Business Leaders</div>
+                            <div class="item-sub">USEM</div>
+                        </div>
+                        <span class="date-badge">Sep 2008 – Feb 2009</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Connect via <a href="https://www.linkedin.com/in/david-gonzalez-pelaez-2903a83/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </footer>
+
+</body>
+</html>
